@@ -1,0 +1,35 @@
+name: Ejecucion del modelo de Machine Learning
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  entrenamiento:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ejecutar modelo
+        run: python modelo.py
+
+      - name: Guardar resumen de ejecucion
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumen-ejecucion
+          path: resumen_ejecucion.txt
