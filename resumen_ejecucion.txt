@@ -1,0 +1,44 @@
+RESUMEN DE EJECUCION - MACHINE LEARNING
+=============================================
+
+PREGUNTA DE NEGOCIO:
+¿Es posible identificar la especie de un pingüino a partir de sus características físicas?
+
+DATASET:
+SIH/palmer-penguins
+Registros: 344
+Columnas: 8
+
+PREPROCESAMIENTO:
+Variables predictoras: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g
+Variable objetivo: species
+Valores nulos: imputados con la mediana
+Duplicados: no se encontraron
+Separacion: 80% entrenamiento y 20% prueba
+
+MODELO:
+Algoritmo: Arbol de decision
+max_depth: 4
+random_state: 42
+
+EVALUACION:
+Exactitud: 0.9855
+
+Reporte de clasificacion:
+              precision    recall  f1-score   support
+
+      Adelie       1.00      0.97      0.98        30
+   Chinstrap       1.00      1.00      1.00        14
+      Gentoo       0.96      1.00      0.98        25
+
+    accuracy                           0.99        69
+   macro avg       0.99      0.99      0.99        69
+weighted avg       0.99      0.99      0.99        69
+
+Matriz de confusion:
+[[29  0  1]
+ [ 0 14  0]
+ [ 0  0 25]]
+
+FECHA DE EJECUCION:
+2026-11-06 01:47:37
