@@ -13,13 +13,32 @@ PREPROCESAMIENTO:
 Variables predictoras: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g
 Variable objetivo: species
 Valores nulos: imputados con la mediana
-Duplicados: no se encontraron
+Registros duplicados: 0
 Separacion: 80% entrenamiento y 20% prueba
 
+COMPARACION DE PROFUNDIDADES:
+max_depth=2: exactitud promedio=0.9527, desviacion=0.0295
+max_depth=3: exactitud promedio=0.9491, desviacion=0.0313
+max_depth=4: exactitud promedio=0.9564, desviacion=0.0272
+max_depth=5: exactitud promedio=0.9564, desviacion=0.0272
+max_depth=None: exactitud promedio=0.9564, desviacion=0.0272
+
+Profundidad seleccionada: 4
+
 MODELO:
-Algoritmo: Arbol de decision
+Tipo de aprendizaje: Supervisado
+Tipo de problema: Clasificacion multiclase
+Algoritmo: Arbol de decision (DecisionTreeClassifier)
 max_depth: 4
 random_state: 42
+
+CONFIGURACION DEL ENTRENAMIENTO:
+Division de datos: 80% entrenamiento y 20% prueba
+Registros de entrenamiento: 275
+Registros de prueba: 69
+Validacion cruzada: 5 particiones estratificadas
+Criterio de evaluacion: exactitud (accuracy)
+Criterio de seleccion: mayor exactitud promedio, menor desviacion y menor profundidad
 
 EVALUACION:
 Exactitud: 0.9855
@@ -40,5 +59,12 @@ Matriz de confusion:
  [ 0 14  0]
  [ 0  0 25]]
 
+IMPORTANCIA DE LAS VARIABLES:
+         variable  importancia
+flipper_length_mm     0.539091
+   bill_length_mm     0.354180
+    bill_depth_mm     0.070618
+      body_mass_g     0.036112
+
 FECHA DE EJECUCION:
-2026-11-06 02:53:13
+2026-11-06 03:16:17

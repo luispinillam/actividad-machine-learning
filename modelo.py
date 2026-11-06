@@ -145,9 +145,20 @@ with open("resumen_ejecucion.txt", "w", encoding="utf-8") as archivo:
     archivo.write(f"\nProfundidad seleccionada: {mejor_profundidad}\n\n")
 
     archivo.write("MODELO:\n")
-    archivo.write("Algoritmo: Arbol de decision\n")
+    archivo.write("Tipo de aprendizaje: Supervisado\n")
+    archivo.write("Tipo de problema: Clasificacion multiclase\n")
+    archivo.write("Algoritmo: Arbol de decision (DecisionTreeClassifier)\n")
     archivo.write(f"max_depth: {mejor_profundidad}\n")
     archivo.write("random_state: 42\n\n")
+
+    archivo.write("CONFIGURACION DEL ENTRENAMIENTO:\n")
+    archivo.write("Division de datos: 80% entrenamiento y 20% prueba\n")
+    archivo.write(f"Registros de entrenamiento: {len(X_train)}\n")
+    archivo.write(f"Registros de prueba: {len(X_test)}\n")
+    archivo.write("Validacion cruzada: 5 particiones estratificadas\n")
+    archivo.write("Criterio de evaluacion: exactitud (accuracy)\n")
+    archivo.write("Criterio de seleccion: mayor exactitud promedio, "
+                  "menor desviacion y menor profundidad\n\n")
 
     archivo.write("EVALUACION:\n")
     archivo.write(f"Exactitud: {exactitud:.4f}\n\n")
