@@ -146,4 +146,48 @@ Para instalar las dependencias se utilizará:
 
     pip install -r requirements.txt
 
+12. Hallazgos y recomendaciones para el negocio
+
+Los resultados obtenidos muestran que las características físicas permiten diferenciar las tres especies de pingüinos con un buen nivel de exactitud. El modelo alcanzó un 98.55 % de exactitud, clasificando correctamente 68 de los 69 registros utilizados para la prueba.
+
+Uno de los principales hallazgos fue que la longitud de las aletas tuvo la mayor importancia en la clasificación, con un 53.91 %, seguida por la longitud del pico, con un 35.42 %. Esto indica que estas características pueden ser especialmente útiles para apoyar la identificación de las especies.
+
+Recomendaciones:
+
+    Utilizar las medidas de las aletas y del pico como características importantes durante la recolección de información de los pingüinos.
+
+    Emplear el modelo como una herramienta de apoyo para investigadores y equipos de monitoreo, no como reemplazo de la identificación realizada por especialistas.
+
+    Ampliar el conjunto de datos con registros de otros lugares y periodos para evaluar el comportamiento del modelo.
+
+    Realizar nuevas pruebas antes de utilizarlo en situaciones reales de monitoreo de fauna silvestre.
+
+13. Confiabilidad y limitaciones de los resultados
+
+El modelo obtuvo una exactitud de 98.55 % en los datos de prueba. Además, la matriz de confusión permitió identificar que solamente un registro fue clasificado incorrectamente.
+
+Aunque los resultados son positivos, se debe tener en cuenta que la evaluación se realizó con un conjunto de prueba de 69 registros pertenecientes al mismo dataset. Por esta razón, el resultado no garantiza que el modelo tenga exactamente el mismo desempeño con pingüinos de otras poblaciones o lugares.
+
+También se debe considerar que el modelo utiliza solamente cuatro características físicas y que su desempeño depende de la calidad y variedad de los datos disponibles.
+
+14. Automatización con GitHub Actions
+
+El proyecto cuenta con un flujo de trabajo automatizado mediante GitHub Actions, configurado para ejecutarse cuando se realizan cambios en la rama principal (main) y también en las solicitudes de integración.
+
+El proceso realiza las siguientes actividades:
+
+    Descarga el repositorio.
+    Configura el entorno de Python.
+    Instala las dependencias del archivo requirements.txt.
+    Ejecuta el archivo modelo.py.
+    Carga automáticamente el dataset desde Hugging Face.
+    Realiza el preprocesamiento, entrenamiento y evaluación.
+    Genera el archivo resumen_ejecucion.txt.
+    Publica el resumen como un artefacto descargable.
+
+El flujo de trabajo se encuentra en .github/workflows/machine-learning.yml.
+
+
+Repositorio: https://github.com/luispinillam/actividad-machine-learning
+
 El archivo resumen_ejecucion.txt contiene los resultados de la ejecución del modelo y se genera mediante código Python.
