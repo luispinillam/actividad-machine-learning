@@ -56,7 +56,7 @@ Parámetros del modelo
     max_depth=4: limita la profundidad del árbol para controlar su complejidad.
     random_state=42: permite reproducir los resultados.
 
-Se compararon diferentes profundidades mediante validación cruzada de cinco particiones. Se seleccionó una profundidad de 4, que obtuvo una exactitud promedio de 95.27 % y una desviación de 0.0247.
+Se compararon diferentes profundidades mediante validación cruzada de cinco particiones. Se seleccionó una profundidad de 4, que obtuvo una exactitud promedio de 95.64 % y una desviación de 0.0272. Esta profundidad permite mantener un buen rendimiento y controlar la complejidad del árbol.
 
 Ventajas
 
@@ -69,6 +69,14 @@ Limitaciones
     Puede presentar sobreajuste si el árbol crece demasiado.
     Sus resultados pueden variar dependiendo de los datos utilizados.
     Una clasificación incorrecta puede ocurrir cuando dos especies tienen características físicas similares.
+
+Funcionamiento del árbol de decisión paso a paso
+
+    El modelo recibe las características físicas de cada pingüino: longitud y profundidad del pico, longitud de las aletas y masa corporal.
+    El algoritmo analiza estas características y busca divisiones que permitan separar los datos según la especie.
+    Organiza las decisiones en nodos y ramas, creando diferentes caminos de clasificación.
+    Se establece una profundidad máxima de 4 para limitar el crecimiento del árbol.
+    Finalmente, cada hoja representa una predicción de la especie: Adelie, Chinstrap o Gentoo.
 
 7. Resultados de la evaluación
 
